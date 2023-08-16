@@ -1,4 +1,4 @@
-.photo-list__item {
+.photo-list-item {
   margin: 24px;
   padding: 8px;
   border-width: 0.5px;
@@ -22,7 +22,7 @@
   height: 200px;
   object-fit: cover;
 }
-
+// profile picture
 .photo-list__user-profile {
   object-fit: cover;
   border-radius: 100%;
@@ -32,6 +32,7 @@
   height: 40px;
 }
 
+// username
 .photo-list__user-details {
   display: flex;
 }
@@ -42,7 +43,7 @@
   font-size: 12px;
   margin-left: 8px;
 }
-
+// location
 .photo-list__user-location {
   color: #838383;
 }

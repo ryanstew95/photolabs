@@ -1,5 +1,8 @@
 .fav-badge {
   position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
 }
 
 .fav-badge__count { 

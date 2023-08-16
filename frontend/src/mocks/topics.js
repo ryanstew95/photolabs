@@ -1,4 +1,4 @@
-const topics = [
+export const topics = [
   {
     "id": "1",
     "slug": "topic-1",
@@ -25,5 +25,3 @@ const topics = [
     "title": "Animals"
   }
 ];
-
-export default topics;

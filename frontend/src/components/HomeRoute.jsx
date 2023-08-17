@@ -21,7 +21,7 @@ const HomeRoute = () => {
       <TopNavigationBar />
       <div className="content-container">
         <div className="nav-items">
-          <FavBadge />
+         
           <TopicList topics={topics} onTopicSelect={handleTopicSelect} />
         </div>
         <PhotoList photos={photos} selectedTopic={selectedTopic} />

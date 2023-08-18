@@ -6,9 +6,18 @@
   left: 50%;
   transform: translate(-50%, -40%);
   height: 80%;
-  width: 55%;
+  width: 80%;
   overflow-y: scroll;
   border-radius: 12px;
+}
+.photo-details-modal__main-photo img {
+width: 75%;
+height: auto;
+}
+
+.photo-details-modal__similar-photos img {
+  width: 75%;
+  height: auto;
 }
 
 .photo-details-modal__close-button {
@@ -27,6 +36,8 @@
 .photo-details-modal__images {
   margin-left: 36px;
   margin-top: 8px;
+  height: 80%;
+  width: 80%;
 }
 
 .photo-details-modal__image {

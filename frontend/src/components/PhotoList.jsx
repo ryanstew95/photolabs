@@ -56,7 +56,7 @@ const sampleDataForPhotoList = [
   },
 ];
 
-const PhotoList = ({ photos }) => {
+const PhotoList = ({ photos, selectedTopic, onPhotoClick }) => {
   return (
     <ul className="photo-list">
         {photos.map(photoData => (
@@ -67,6 +67,8 @@ const PhotoList = ({ photos }) => {
           imageSource={photoData.urls.regular}
           username={photoData.user.name}
           profile={photoData.user.profile}
+          onPhotoClick={onPhotoClick}
+          photo={photoData}
         />
       ))}
     </ul>

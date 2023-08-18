@@ -10,5 +10,4 @@ root.render(
     <App />
     </FavProvider>
   </React.StrictMode>,
-  document.getElementById('root')
 );

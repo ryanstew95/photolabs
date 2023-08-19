@@ -7,7 +7,7 @@ import { useFavContext } from "./FavContext";
 const PhotoListItem = ({ id, location, imageSource, username, profile, onPhotoClick, photo }) => {
   const { favorites, toggleFavorite } = useFavContext();
   const isFavorite = favorites.includes(id);
-  
+
   return (
     <div className="photo-list-item">
       <FavIcon selected={isFavorite} onClick={() => toggleFavorite(id)} />
@@ -30,7 +30,7 @@ const PhotoListItem = ({ id, location, imageSource, username, profile, onPhotoCl
           />
         </div>
         <div className="photo-list__user-details">{username}</div>
-        <div className="photo-list__user-location">{`${location.city}, ${location.country}`}</div>
+        {/* <div className="photo-list__user-location">{`${location.city}, ${location.country}`}</div> */}
       </div>
     </div>
   );

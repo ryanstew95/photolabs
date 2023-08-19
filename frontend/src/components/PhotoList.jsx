@@ -57,6 +57,7 @@ const sampleDataForPhotoList = [
 ];
 
 const PhotoList = ({ photos, selectedTopic, onPhotoClick }) => {
+  console.log('inside PhotoList:', photos);
   return (
     <ul className="photo-list">
         {photos.map(photoData => (

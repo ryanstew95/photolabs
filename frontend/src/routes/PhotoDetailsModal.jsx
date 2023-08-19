@@ -3,7 +3,10 @@ import '../styles/PhotoDetailsModal.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
 import FavIcon from 'components/FavIcon';
 import { useFavContext } from 'components/FavContext';
+import PhotoList from 'components/PhotoListItem';
 const PhotoDetailsModal = ({ photo, onCloseModal, id }) => {
+  console.log(photo.similar_photos);
+  console.log(Object.values(photo.similar_photos));
   const { favorites, toggleFavorite } = useFavContext();
   const isFavorite = favorites.includes(id);
   return (
@@ -19,13 +22,8 @@ const PhotoDetailsModal = ({ photo, onCloseModal, id }) => {
         <FavIcon selected={isFavorite} onClick={() => toggleFavorite(id)} />
         {/* Display similar photos */}
         <div className="photo-details-modal__similar-photos">
-          {/* Map through similar photos and display them */}
-          {Object.values(photo.similar_photos).map((similarPhoto) => (
-            <div key={similarPhoto.id} className="photo-details-modal__similar-photo">
-              <img src={similarPhoto.urls.regular} alt={`Similar Photo by ${similarPhoto.user.name}`} />
-              <FavIcon selected={isFavorite} onClick={() => toggleFavorite(similarPhoto.id)} />
-            </div>
-          ))}
+      
+          <PhotoList photos={Object.values(photo.similar_photos)}/>
         </div>
       </div>
     </div>

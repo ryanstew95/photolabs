@@ -1,10 +1,11 @@
+// FavIcon.jsx
 import React, { useState } from 'react';
 
-const FavIcon = ({ displayAlert, selected, onClick }) => {
-  const [isActive, setIsActive] = useState(selected);
+const FavIcon = ({ displayAlert, onClick, isActive }) => {
+  // const [isActive, setIsActive] = useState(selected);
 
   const handleIconClick = () => {
-    setIsActive(!isActive);
+    // setIsActive(!isActive);
     onClick();
   };
 

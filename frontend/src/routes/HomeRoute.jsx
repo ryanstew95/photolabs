@@ -7,7 +7,7 @@ import  photos  from '../mocks/photos';
 import { topics } from '../mocks/topics';
 
 
-const HomeRoute = ({ onPhotoClick }) => {
+const HomeRoute = ({ onPhotoClick, favorites }) => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
   const handleTopicSelect = (topicSlug) => {
@@ -17,7 +17,7 @@ const HomeRoute = ({ onPhotoClick }) => {
 
   return (
     <div className="HomeRoute">
-      <TopNavigationBar />
+      <TopNavigationBar favorites={favorites} />
       <div className="content-container">
         <div className="nav-items">
          

@@ -1,3 +1,5 @@
+// PhotoFavButton.jsx
+// this is the new fav button
 import React, { useCallback, useState } from 'react';
 
 import FavIcon from './FavIcon';
@@ -7,7 +9,7 @@ function PhotoFavButton({isFavorite, toggleFavorite}) {
   return (
     <div className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">
-  <FavIcon selected={isFavorite} onClick={() => toggleFavorite(id)} />
+  <FavIcon isActive={isFavorite} onClick={toggleFavorite} />
       </div>
     </div>
   );

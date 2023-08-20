@@ -1,3 +1,4 @@
+// FavContext.jsx
 import React, { createContext, useContext, useState } from 'react';
 
 const FavContext = createContext();

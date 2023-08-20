@@ -17,6 +17,7 @@ const App = () => {
   };
 
   return (
+
     <div className="App">
     
         <HomeRoute onPhotoClick={handlePhotoClick} />
@@ -28,6 +29,7 @@ const App = () => {
         )}
    
     </div>
+
   );
 };
 

@@ -1,8 +1,9 @@
 import React from "react";
-import FavIcon from "./FavIcon";
+// import FavIcon from "./FavIcon";
 import "../styles/PhotoListItem.scss";
 import "../styles/PhotoFavButton.scss";
 import { useFavContext } from "./FavContext";
+import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = ({ id, location, imageSource, username, profile, onPhotoClick, photo }) => {
   const { favorites, toggleFavorite } = useFavContext();
@@ -10,7 +11,9 @@ const PhotoListItem = ({ id, location, imageSource, username, profile, onPhotoCl
 
   return (
     <div className="photo-list-item">
-      <FavIcon selected={isFavorite} onClick={() => toggleFavorite(id)} />
+   
+      <PhotoFavButton isFavorite={isFavorite} toggleFavorite={() => toggleFavorite(id)} />
+  
       <img
         className="photo-list__image"
         src={imageSource}
@@ -20,6 +23,7 @@ const PhotoListItem = ({ id, location, imageSource, username, profile, onPhotoCl
           onPhotoClick(photo);
         }}
       />
+     
 
       <div className="photo-list__user-info">
         <div className="user-info">
@@ -30,7 +34,7 @@ const PhotoListItem = ({ id, location, imageSource, username, profile, onPhotoCl
           />
         </div>
         <div className="photo-list__user-details">{username}</div>
-        {/* <div className="photo-list__user-location">{`${location.city}, ${location.country}`}</div> */}
+        <div className="photo-list__user-location">{`${location.city}, ${location.country}`}</div>
       </div>
     </div>
   );

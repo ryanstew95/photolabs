@@ -10,15 +10,7 @@
   overflow-y: scroll;
   border-radius: 12px;
 }
-.photo-details-modal__main-photo img {
-width: 50%;
-height: auto;
-}
 
-.photo-details-modal__similar-photos img {
-  width: 50%;
-  height: auto;
-}
 
 .photo-details-modal__close-button {
   background-color: white;
@@ -67,3 +59,34 @@ height: auto;
   margin-bottom: 24px;
   width: 90%;
 }
+// full size image
+.photo-details-modal__image {
+  user-select: none;
+  width: 500px;
+  height: 400px;
+  object-fit: cover;
+}
+// fav button
+.photo-details-modal__fav-button {
+  position: absolute;
+  top: 49px;
+  right: 1140px;
+}
+// name
+.photo-details-modal__user-details {
+  display: flex;
+}
+// profile image
+.photo-details-modal__user-profile {
+  object-fit: cover;
+  border-radius: 100%;
+  vertical-align: middle;
+  margin-right: 8px;
+  width: 40px;
+  height: 40px;
+}
+// location
+.photo-details-modal__user-location {
+  color: #838383;
+}
+

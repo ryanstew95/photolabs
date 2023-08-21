@@ -2,9 +2,15 @@ import React, { useState } from 'react';
 import HomeRoute from './routes/HomeRoute';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import './App.scss';
+import useApplicationData from 'hooks/useApplicationData';
 
-
-const App = () => {
+const App = (props) => {
+  const {
+    state,
+    onPhotoSelect,
+    updateToFavPhotoIds,
+    onClosePhotoDetailsModal,
+  } = useApplicationData();
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   const handlePhotoClick = (photo) => {

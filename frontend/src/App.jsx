@@ -5,6 +5,7 @@ import './App.scss';
 import useApplicationData from 'hooks/useApplicationData';
 
 const App = (props) => {
+  
   const {
     state,
     onPhotoSelect,
@@ -26,7 +27,7 @@ const App = (props) => {
 
     <div className="App">
     
-        <HomeRoute onPhotoClick={handlePhotoClick} />
+        <HomeRoute onPhotoClick={handlePhotoClick} photos={state.photos} topics={state.topics} />
         {selectedPhoto && (
           <PhotoDetailsModal
             photo={selectedPhoto}

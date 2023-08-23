@@ -8,11 +8,23 @@ import '../styles/HomeRoute.scss';
 
 
 const HomeRoute = ({ onPhotoClick, favorites, photos, topics }) => {
+
   const [selectedTopic, setSelectedTopic] = useState(null);
+
 console.log('app data:', photos, topics);
   const handleTopicSelect = (topicSlug) => {
     console.log('Selected topic:', topicSlug);
     setSelectedTopic(topicSlug);
+    try {
+ 
+      const response = fetch(`http://localhost:8001/api/topics/photos/${topicSlug}`);
+      const data = response.json();
+      
+     
+      setPhotoSelected(data.photos);
+    } catch (error) {
+      console.error('Error fetching photos for topic:', error);
+    }
   };
 
   return (

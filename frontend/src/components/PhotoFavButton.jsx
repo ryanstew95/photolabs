@@ -1,5 +1,4 @@
 // PhotoFavButton.jsx
-// this is the new fav button
 import React, { useCallback, useState } from 'react';
 
 import FavIcon from './FavIcon';

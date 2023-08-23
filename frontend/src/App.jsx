@@ -15,7 +15,6 @@ const App = (props) => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   const handlePhotoClick = (photo) => {
-    console.log('photo clicked', photo);
     setSelectedPhoto(photo);
   };
 

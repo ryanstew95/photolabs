@@ -18,7 +18,6 @@ const PhotoListItem = ({ id, location, imageSource, username, profile, onPhotoCl
         src={imageSource}
         alt={`Photo by ${username}`}
         onClick={() => {
-          console.log("Clicked photo:", photo);
           onPhotoClick(photo);
         }}
       />

@@ -1,11 +1,7 @@
 // FavIcon.jsx
-import React, { useState } from 'react';
+import React from 'react';
 
 const FavIcon = ({ displayAlert, onClick, isActive }) => {
-
-  const handleIconClick = () => {
-    onClick();
-  };
 
   return (
     <svg
@@ -14,7 +10,7 @@ const FavIcon = ({ displayAlert, onClick, isActive }) => {
       viewBox="0 0 24 19"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      onClick={handleIconClick}
+      onClick={onClick}
     >
       <path
         fill={isActive ? "#C80000" : "#EEEEEE"}
@@ -39,4 +35,3 @@ const FavIcon = ({ displayAlert, onClick, isActive }) => {
 };
 
 export default FavIcon;
-

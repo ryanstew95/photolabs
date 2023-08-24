@@ -16,6 +16,11 @@ function reducer(state, action) {
         ...state,
         favoritePhotoIds: [...state.favoritePhotoIds, action.payload.photoId],
       };
+      case ACTIONS.FAV_PHOTO_REMOVED:
+        return {
+          ...state,
+          favoritePhotoIds: action.payload.copyOfFavs
+        }
     case ACTIONS.SET_PHOTO_DATA:
       return {
         ...state,
@@ -59,7 +64,6 @@ function useApplicationData() {
     fetch("/api/photos")
       .then((response) => response.json())
       .then((data) => {
-      console.log(data);
         dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: data })
       });
   }, []);
@@ -68,12 +72,25 @@ function useApplicationData() {
     fetch("/api/topics")
       .then((response) => response.json())
       .then((data) => {
-      console.log(data);
         dispatch({ type: ACTIONS.SET_TOPIC_DATA, payload: data })
       });
   }, []);
+  
+const onTopicSelect = (topicId) => {
+    fetch(`/api/topics/photos/${topicId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch({ type: ACTIONS.SET_PHOTO_DATA, payload: data })
+      });
+    }
 
   const updateToFavPhotoIds = (photoId) => {
+    if (state.favoritePhotoIds.includes(photoId)) {
+      const copyOfFavs = [...state.favoritePhotoIds].filter((favorite) => favorite !== photoId)
+      dispatch({ type: ACTIONS.FAV_PHOTO_REMOVED, payload: { copyOfFavs } });
+      return 
+    }
+
     dispatch({ type: ACTIONS.FAV_PHOTO_ADDED, payload: { photoId } });
   };
 
@@ -90,6 +107,7 @@ function useApplicationData() {
     updateToFavPhotoIds,
     setPhotoSelected,
     onClosePhotoDetailsModal,
+    onTopicSelect
   };
 }
 

@@ -11,6 +11,7 @@ const App = (props) => {
     onPhotoSelect,
     updateToFavPhotoIds,
     onClosePhotoDetailsModal,
+    onTopicSelect
   } = useApplicationData();
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
@@ -26,7 +27,7 @@ const App = (props) => {
 
     <div className="App">
     
-        <HomeRoute onPhotoClick={handlePhotoClick} photos={state.photos} topics={state.topics} />
+        <HomeRoute onPhotoClick={handlePhotoClick} photos={state.photos} topics={state.topics} topicSelect={onTopicSelect}/>
         {selectedPhoto && (
           <PhotoDetailsModal
             photo={selectedPhoto}

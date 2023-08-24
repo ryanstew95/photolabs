@@ -3,7 +3,6 @@ import PhotoListItem from './PhotoListItem';
 import "../styles/PhotoList.scss";
 
 const PhotoList = ({ photos, onPhotoClick }) => {
-  console.log('inside PhotoList:', photos);
   return (
     <ul className="photo-list">
         {photos.map(photoData => (

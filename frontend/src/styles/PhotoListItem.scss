@@ -42,7 +42,9 @@
 .photo-list__user-details {
   display: flex;
 }
-
+.dark-mode .photo-list__user-details {
+  color: white;
+}
 .photo-list__user-info {
   margin-top: 5px;
   font-weight: 700;

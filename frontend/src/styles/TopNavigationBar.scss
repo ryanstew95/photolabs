@@ -1,3 +1,4 @@
+// TopNavigationBar.scss
 .top-nav-bar {
   display: flex;
   flex-direction: row;
@@ -7,6 +8,21 @@
   -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 4px 6px -6px #222;
+
+
+}
+
+.dark-mode-button {
+  // Styles for the dark mode toggle button
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #333;
+  }
 }
 
 .top-nav-bar__logo {
@@ -16,4 +32,14 @@
   color: #111;
   text-underline-position: auto;
   margin-left: 24px;
+}
+
+.dark-mode .top-nav-bar__logo {
+  color: #ffffff;
+}
+
+.dark-mode {
+  // Styles for dark mode
+  background-color: #1a1a1a;
+  color: #ffffff;
 }

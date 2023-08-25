@@ -11,6 +11,9 @@
   border-radius: 12px;
   
 }
+.dark-mode .photo-details-modal {
+  background-color: black;
+}
 .photo-details-modal__main-photo-details {
   margin: 24px;
   padding: 8px;
@@ -88,6 +91,9 @@
   font-weight: 700;
   font-size: 12px;
   margin-left: 8px;
+}
+.dark-mode .photo-details-modal__user-details {
+  color: white;
 }
 // profile image
 .photo-details-modal__user-profile {
